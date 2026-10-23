@@ -1,0 +1,22 @@
+{
+  "name": "agent-engineering-week02-tool-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo": "tsx src/demo.ts",
+    "live": "tsx src/live.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "openai": "^7.10.0",
+    "zod": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
