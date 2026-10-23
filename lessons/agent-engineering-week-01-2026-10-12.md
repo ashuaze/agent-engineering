@@ -333,7 +333,7 @@ flowchart TD
 
 本期教学目标是：**不接真实 LLM，依然能确定性测试执行系统。**
 
-完整教学工程见同批提供的 `agent-harness-week01.zip`。以下代码展示关键抽象，不是完整可复制后直接独立编译的单文件。
+完整教学工程见 [第 01 期实践源码](../projects/week-01/README.md)。以下代码展示关键抽象，不是完整可复制后直接独立编译的单文件。
 
 ### 5.1 ModelPort
 
@@ -623,7 +623,7 @@ Can it live outside Runner?
 
 ### 9.1 教学项目
 
-代码包：`agent-harness-week01.zip`（与本文 Markdown 一起下载并放置在同一目录即可归档）。
+配套项目：[第 01 期实践源码与运行说明](../projects/week-01/README.md)。
 
 ```text
 agent-harness-week01/
@@ -761,4 +761,4 @@ H=Runtime+Context+Tools+State+Policy+Budget+Observability
 
 ---
 
-**归档说明**：此文件按首期已发布课程整理为独立 Markdown 版本；演示 ZIP 单独归档。本文包含核心设计、图、代码片段、实践任务、思考题和原始资源 URL。后续文件按 `agent-engineering-week-NN-YYYY-MM-DD.md` 命名，以避免覆盖历史课程。
+**归档说明**：此文件按首期已发布课程整理为独立 Markdown 版本；配套实践源码见 [项目目录](../projects/week-01/README.md)。本文包含核心设计、图、代码片段、实践任务、思考题和原始资源 URL。后续文件按 `agent-engineering-week-NN-YYYY-MM-DD.md` 命名，以避免覆盖历史课程。

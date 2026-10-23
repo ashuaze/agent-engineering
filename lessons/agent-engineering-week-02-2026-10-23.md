@@ -10,7 +10,7 @@ code_status: "本次补档：typecheck、7 个测试与离线演示通过；真�
 
 # 第02期｜LLM Tool Calling：从模型协议到可靠工具执行
 
-> 归档说明（2026-10-23）：本阅读版基于用户提供的完整 Markdown 原件整理，保留课程正文、图、代码、练习和原发布验证说明。配套 [TypeScript 实践源码](../projects/week-02/README.md) 已解压归档；[原始 Markdown](../originals/week-02/agent-engineering-week-02-2026-10-23.md) 与 [原始代码 ZIP](../originals/week-02/agent-engineering-week-02.zip) 按字节保留。本次类型检查、7 个测试与离线演示通过，具体命令与环境限制见项目 README。下文版本、“查验”和原发布验证状态属于历史记录，本次补档未逐项重新核验。
+> 归档说明（2026-10-23）：本阅读版基于用户提供的完整 Markdown 原件整理，保留课程正文、图、代码、练习和原发布验证说明。配套 [TypeScript 实践源码](../projects/week-02/README.md) 已整理到仓库中。本次类型检查、7 个测试与离线演示通过，具体命令与环境限制见项目 README。下文版本、“查验”和原发布验证状态属于历史记录，本次补档未逐项重新核验。
 
 **定位**：第01期把 Agent 拆成 Model + Harness；这一期深入 Harness 与外部业务世界之间最关键的边界：Tool Calling。  
 **阅读时间**：约20–25分钟；**实践时间**：45–60分钟。  
@@ -317,7 +317,7 @@ await payment.refund({
 
 ## 06. TypeScript 实现：一个最小但有边界的 Tool Runtime
 
-本期配套 ZIP 包含完整项目：`src/core.ts`、`src/fake-model.ts`、`src/openai-model.ts`、`src/demo.ts`、`src/live.ts`、`test/core.test.ts`。下面选取关键代码解释，完整实现以配套源码为准。
+本期 [配套实践项目](../projects/week-02/README.md) 包含：`src/core.ts`、`src/fake-model.ts`、`src/openai-model.ts`、`src/demo.ts`、`src/live.ts`、`test/core.test.ts`。下面选取关键代码解释，完整实现以配套源码为准。
 
 ### 6.1 统一 Provider 协议
 

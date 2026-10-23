@@ -18,9 +18,10 @@ npm run live
 ```
 
 这是教学实现，不是生产服务。`runAgent` 的上下文保存在内存中，没有 Run/Step 持久化、写操作审批恢复、数据库幂等记录或进程崩溃恢复。工具超时依赖 `AbortSignal` 的合作式取消；远端副作用无法靠 abort 撤销。`OpenAIModelSession` 必须每个 Run 单独创建，不能作为跨用户共享单例。示例工具返回模拟数据，不代表已执行真实业务租户隔离查询。
+
 ## 本次补档与验证（2026-10-23）
 
-源码与 `package.json` 保留原 ZIP 内容。本次新增依赖锁文件及本节验证记录；原 ZIP 可从 [这里下载](../../originals/week-02/agent-engineering-week-02.zip)。
+源码与 `package.json` 保留原始项目内容。本次新增依赖锁文件及本节验证记录。
 
 验证环境：Node.js v24.19.0、npm 11.9.0。锁定的直接依赖：TypeScript 5.9.3、Zod 4.6.7、OpenAI SDK 7.43.0、tsx 4.23.15、@types/node 22.20.5。
 
