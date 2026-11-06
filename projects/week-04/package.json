@@ -1,0 +1,1 @@
+{"name":"agent-runtime-week04","private":true,"type":"module","scripts":{"typecheck":"tsc --noEmit","test":"node --experimental-strip-types --test test/*.test.ts","demo":"node --experimental-strip-types src/demo.ts"},"devDependencies":{"typescript":"^5.9.3","@types/node":"^22.0.0"},"engines":{"node":">=22.16.0"}}

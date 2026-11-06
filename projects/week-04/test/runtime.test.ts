@@ -1,0 +1,12 @@
+import { test } from 'node:test';
+import { strict as assert } from 'node:assert';
+import { mkdtemp } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { MemoryStore, FileStore, Runtime, Conflict, InvalidTransition } from '../src/runtime.ts';
+test('start, pause, approve, finish',async()=>{const r=new Runtime(new MemoryStore());await r.start('a');const p=await r.requestApproval('a','write','{}');assert.equal(p.status,'WAITING_APPROVAL');await r.decide('a',p.pending!.approvalId,true);const d=await r.finish('a');assert.equal(d.status,'COMPLETED');assert.deepEqual(d.events.map(e=>e.seq),[1,2,3,4])});
+test('rejection terminates',async()=>{const r=new Runtime(new MemoryStore());await r.start('b');const p=await r.requestApproval('b','write','{}');const s=await r.decide('b',p.pending!.approvalId,false);assert.equal(s.status,'FAILED');await assert.rejects(()=>r.finish('b'),InvalidTransition)});
+test('stale version rejected',async()=>{const s=new MemoryStore();const r=new Runtime(s);const initial=await r.start('c');await r.requestApproval('c','write','{}');await assert.rejects(()=>s.cas('c',initial.version,{...initial,version:2}),Conflict)});
+test('duplicate decision rejected',async()=>{const r=new Runtime(new MemoryStore());await r.start('d');const p=await r.requestApproval('d','write','{}');await r.decide('d',p.pending!.approvalId,true);await assert.rejects(()=>r.decide('d',p.pending!.approvalId,true),InvalidTransition)});
+test('file recovery from new instance',async()=>{const dir=await mkdtemp(join(tmpdir(),'agent-recover-'));const a=new Runtime(new FileStore(dir));await a.start('e');const p=await a.requestApproval('e','write','{}');const b=new Runtime(new FileStore(dir));assert.equal((await b.recover('e')).status,'WAITING_APPROVAL');await b.decide('e',p.pending!.approvalId,true);assert.equal((await b.finish('e')).status,'COMPLETED')});
+test('same-process concurrent CAS only one wins',async()=>{const s=new MemoryStore();const r=new Runtime(s);const base=await r.start('f');const n={...base,version:2};const results=await Promise.allSettled([s.cas('f',1,n),s.cas('f',1,n)]);assert.equal(results.filter(x=>x.status==='fulfilled').length,1)});

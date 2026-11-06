@@ -11,6 +11,7 @@
 | 01 | 2026-10-12 | [Agent = Model + Harness：从 LLM 调用到可靠执行系统](lessons/agent-engineering-week-01-2026-10-12.md) | [源码](projects/week-01/README.md) | 原稿归档 |
 | 02 | 2026-10-23 | [LLM Tool Calling：从模型协议到可靠工具执行](lessons/agent-engineering-week-02-2026-10-23.md) | [源码](projects/week-02/README.md) | 原稿归档 |
 | 03 | 2026-10-30 | [Agent Runtime 状态机：Run / Step / Event 建模与持久化设计](lessons/agent-engineering-week-03-2026-10-30.md) | [源码](projects/week-03/README.md) | 新增课程（本次同步） |
+| 04 | 2026-11-06 | [Pause / Resume、Checkpoint、乐观锁与 Crash Recovery](lessons/agent-engineering-week-04-2026-11-06.md) | [源码](projects/week-04/README.md) | 新增课程 |
 
 <!-- ISSUES:END -->
 
@@ -24,3 +25,5 @@
 - 第 01 期保留原始教学代码，尚未在本次归档中运行测试。
 - 第 02 期完整课程与实践源码已归档；本次类型检查、7 个自动化测试及离线演示通过，具体命令与环境说明见 [项目 README](projects/week-02/README.md)。真实模型 API 未运行。
 - 第 03 期 TypeScript 内存教学内核已通过类型检查、10 个离线测试与演示；真实 PostgreSQL、LLM API、CI 未运行。详见 [项目 README](projects/week-03/README.md)。
+
+- 第 04 期：6/6 离线测试及演示通过；依赖安装超时，类型检查因缺少 `@types/node` 未通过；真实 PostgreSQL、CI、模型 API 未验证。
