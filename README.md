@@ -42,6 +42,8 @@
 | 03 | 2026-10-30 | [Agent Runtime 状态机：Run / Step / Event 建模与持久化设计](lessons/agent-engineering-week-03-2026-10-30.md) | [源码](projects/week-03/README.md) | 课程已归档 |
 | 04 | 2026-11-06 | [Pause / Resume、Checkpoint、乐观锁与 Crash Recovery](lessons/agent-engineering-week-04-2026-11-06.md) | [源码](projects/week-04/README.md) | 课程已归档 |
 
+| 05 | 2026-11-13 | [Tool Gateway、MCP、工具隔离、权限、审批与幂等](lessons/agent-engineering-week-05-2026-11-13.md) | [源码](projects/week-05/README.md) | 课程已归档 |
+
 <!-- ISSUES:END -->
 
 ## 16 期学习路线
@@ -54,7 +56,7 @@
 | Ⅰ · 执行内核 | 02 | LLM Tool Calling | 协议、JSON Schema、并行与依赖、错误处理 | 已发布 |
 | Ⅰ · 执行内核 | 03 | Runtime 状态机 | Run / Step / Event、状态迁移与执行记录 | 已发布 |
 | Ⅰ · 执行内核 | 04 | Pause / Resume 与 Crash Recovery | Checkpoint、乐观锁、恢复、未知外部结果 | 已发布 |
-| Ⅰ · 执行内核 | 05 | Tool Gateway 与 MCP | 工具隔离、权限、审批与幂等 | 规划中 |
+| Ⅰ · 执行内核 | 05 | Tool Gateway 与 MCP | 工具隔离、权限、审批与幂等 | 已发布 |
 | Ⅱ · 上下文与知识 | 06 | Context Engineering | Token 预算、信息选择、压缩与上下文构造 | 规划中 |
 | Ⅱ · 上下文与知识 | 07 | Memory 类型与架构 | Working / Session / Semantic / Episodic / Procedural | 规划中 |
 | Ⅱ · 上下文与知识 | 08 | Memory 生命周期 | 写入、检索、更新、遗忘、冲突与评测 | 规划中 |
@@ -107,3 +109,5 @@ agent-engineering/
 - 第 03 期 TypeScript 内存教学内核已通过类型检查、10 个离线测试与演示；真实 PostgreSQL、LLM API、CI 未运行。详见 [项目 README](projects/week-03/README.md)。
 
 - 第 04 期：6/6 离线测试及演示通过；依赖安装超时，类型检查因缺少 `@types/node` 未通过；真实 PostgreSQL、CI、模型 API 未验证。
+
+- 第 05 期：TypeScript 类型检查、12/12 离线测试与 Demo 通过；npm install 网络超时，使用预装工具链验证；真实 MCP/OAuth/PostgreSQL/CI 未运行。详见 [项目 README](projects/week-05/README.md)。
